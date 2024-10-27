@@ -1,5 +1,6 @@
 package com.david.chatapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Generated;
@@ -19,8 +20,10 @@ public class User implements UserDetails {
 
     @Id
     @Generated
+    @JsonIgnore
     private String id;
     private String username;
+    @JsonIgnore
     private String password;
     private String firstname;
     private String lastname;

@@ -1,6 +1,5 @@
 package com.david.chatapp.controller;
 
-import com.david.chatapp.model.AuthenticateDto;
 import com.david.chatapp.model.RegisterDto;
 import com.david.chatapp.model.ResponseData;
 import com.david.chatapp.service.AuthService;
@@ -21,10 +20,5 @@ public class RegistrationController {
     @PostMapping("register")
     public ResponseEntity<ResponseData> registerUser(@RequestBody @Valid RegisterDto registerDto){
         return userService.registerUser(registerDto);
-    }
-
-    @PostMapping("authenticate")
-    public ResponseEntity<ResponseData> authenticate(@RequestBody @Valid AuthenticateDto authenticateDto){
-        return userService.authenticateUser(authenticateDto);
     }
 }

@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -15,9 +14,6 @@ public class ChatController {
 
     // Injecting the ChatService to handle saving and retrieving chat messages
     private final ChatService chatService;
-
-    // SimpMessagingTemplate is used to send messages to specific destinations (topics, queues) over WebSocket
-    private final SimpMessagingTemplate messagingTemplate;
 
     /**
      * Handles incoming chat messages sent to the "/chat.send" destination.
